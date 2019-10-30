@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
+#include<cassert>
 #include "BinaryInsertionSort.h"
+#include "LinkedList.h"
 #include "Node.h"
 using namespace std;
 
@@ -30,6 +32,11 @@ int main() {
         cout << v[i] << endl;
     }
 
-    // FINISH ME
+    // Insertion Sort using linked lists
+
+    LinkList list;
+    list.InsertionSort();
+
+
 
 }
