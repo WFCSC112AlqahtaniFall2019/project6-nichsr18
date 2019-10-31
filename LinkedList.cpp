@@ -25,7 +25,7 @@ LinkList::~ LinkList(){
     delete head->next;
 }
 
-
+//overloaded = operator
 LinkList& LinkList:: operator=(const LinkList &rhs){
 LinkList temp(rhs);
 swap(head, temp.head);
@@ -33,6 +33,7 @@ swap(head, temp.head);
 return *this;
 }
 
+//prints list
 void LinkList::printList() const{
     Node * cursor = head;
     if (! cursor ){
@@ -51,16 +52,17 @@ void LinkList::InsertionSort() {
     Node* curr;
     Node* prev;
     Node* loc;
-    Node* mockH =new Node;
+    Node* mockH =new Node;//creates node before head
     mockH->next=head;
     curr = head->next;
     prev=head;
     while (curr != nullptr) {
-        loc=mockH;
+        loc=mockH;//resets loc
+        //finds value of loc
         while(loc->next->value<curr->value){
             loc=loc->next;
         }
-
+        //runs if out of order
         if(curr->value<=prev->value) {
                 prev->next = curr->next;
                 curr->next = loc->next;
@@ -69,11 +71,13 @@ void LinkList::InsertionSort() {
 
 
         }else{
+            //increments prev and curr if didn't run
             prev=curr;
             curr=curr->next;
         }
 
     }
+    //gets rid of node before head
     head=mockH->next;
     mockH->next=nullptr;
     delete mockH;

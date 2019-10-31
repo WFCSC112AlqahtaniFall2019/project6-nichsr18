@@ -36,6 +36,7 @@ int main() {
         for (int i = 0; i < v.size(); i++) {
             int value = rand() % 100;
             v[i] = value;
+            //generates linked list
             if (list.head == nullptr) {
                 list.head = new Node(value);
             } else {
