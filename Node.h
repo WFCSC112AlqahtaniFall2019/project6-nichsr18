@@ -9,11 +9,16 @@ public:
         value = v;
         next = n;
     }
+    ~Node(){
+            delete next;
+    }
+
     friend class LinkList;
+
+    Node* next;
 private:
 
     int value;
-    Node* next;
 
 };
 
