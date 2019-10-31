@@ -6,11 +6,11 @@
 #include<iostream>
 using namespace std;
 LinkList::LinkList(){
-    cout<<"constructor called"<<endl;
+    //cout<<"constructor called"<<endl;
 
 }
 LinkList::LinkList(const LinkList &list){
-    cout<<"copy constructor called"<<endl;
+    //cout<<"copy constructor called"<<endl;
     Node* curr=head;
     Node* srcCurr=list.head;
     while(srcCurr!=nullptr) {
@@ -21,7 +21,7 @@ LinkList::LinkList(const LinkList &list){
     }
 }
 LinkList::~ LinkList(){
-    cout<<"destructor called"<<endl;
+    //cout<<"destructor called"<<endl;
     delete head->next;
 }
 
@@ -47,7 +47,7 @@ void LinkList::printList() const{
 
 
 void LinkList::InsertionSort() {
-    cout<<"insertion sort called"<<endl;
+    //cout<<"insertion sort called"<<endl;
     Node* curr;
     Node* prev;
     Node* loc;
